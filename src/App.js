@@ -44,7 +44,8 @@ function App() {
         let allData = [];
 
         for (const fileName of fileNames) {
-          const response = await fetch(`/${fileName}`);
+          // Updated fetch call with process.env.PUBLIC_URL
+          const response = await fetch(`${process.env.PUBLIC_URL}/${fileName}`);
           const buffer = await response.arrayBuffer();
           const workbook = XLSX.read(buffer, { type: 'array' });
           const sheetName = workbook.SheetNames[0];
