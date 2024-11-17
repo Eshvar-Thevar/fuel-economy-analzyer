@@ -1,4 +1,8 @@
 {
+  "name": "your-app-name",
+  "version": "0.1.0",
+  "homepage": "https://Eshvar-Thevar.github.io/fuel-economy-analyzer",
+  
   "name": "fuel-economy-analzyer",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +20,8 @@
     "xlsx": "^0.18.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }
