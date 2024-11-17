@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/fuel-economy-analyzer/static/css/main.f80dbf4b.css",
-    "main.js": "/fuel-economy-analyzer/static/js/main.0a487305.js",
-    "index.html": "/fuel-economy-analyzer/index.html",
-    "main.f80dbf4b.css.map": "/fuel-economy-analyzer/static/css/main.f80dbf4b.css.map",
-    "main.0a487305.js.map": "/fuel-economy-analyzer/static/js/main.0a487305.js.map"
+    "main.css": "/fuel-economy-analzyer/static/css/main.f80dbf4b.css",
+    "main.js": "/fuel-economy-analzyer/static/js/main.0a487305.js",
+    "index.html": "/fuel-economy-analzyer/index.html",
+    "main.f80dbf4b.css.map": "/fuel-economy-analzyer/static/css/main.f80dbf4b.css.map",
+    "main.0a487305.js.map": "/fuel-economy-analzyer/static/js/main.0a487305.js.map"
   },
   "entrypoints": [
     "static/css/main.f80dbf4b.css",
