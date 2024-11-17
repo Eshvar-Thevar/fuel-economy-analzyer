@@ -125,6 +125,32 @@ function App() {
   };
 
   const StatisticsTab = ({ data }) => {
+    // Calculate statistics for just this dataset
+    const calculateLocalStats = (vehicles) => {
+      if (vehicles.length === 0) return null;
+  
+      const avgCityMPG = vehicles.reduce((sum, v) => {
+        const mpg = parseFloat(v['City FE (Guide) - Conventional Fuel'] || 0);
+        return sum + (isNaN(mpg) ? 0 : mpg);
+      }, 0) / vehicles.length;
+  
+      const avgHighwayMPG = vehicles.reduce((sum, v) => {
+        const mpg = parseFloat(v['Hwy FE (Guide) - Conventional Fuel'] || 0);
+        return sum + (isNaN(mpg) ? 0 : mpg);
+      }, 0) / vehicles.length;
+  
+      const avgCombinedMPG = vehicles.reduce((sum, v) => {
+        const mpg = parseFloat(v['Comb FE (Guide) - Conventional Fuel'] || 0);
+        return sum + (isNaN(mpg) ? 0 : mpg);
+      }, 0) / vehicles.length;
+  
+      return {
+        avgCityMPG,
+        avgHighwayMPG,
+        avgCombinedMPG
+      };
+    };
+  
     if (data.length === 0) {
       return (
         <div className="no-data-message">
@@ -132,10 +158,9 @@ function App() {
         </div>
       );
     }
-
+  
     if (data.length > 1) {
-      const avgCityMPG = data.reduce((sum, v) => sum + parseFloat(v['City FE (Guide) - Conventional Fuel'] || 0), 0) / data.length;
-      const avgHighwayMPG = data.reduce((sum, v) => sum + parseFloat(v['Hwy FE (Guide) - Conventional Fuel'] || 0), 0) / data.length;
+      const localStats = calculateLocalStats(data);
       const uniqueManufacturers = new Set(data.map(v => v['Mfr Name'])).size;
       const uniqueModels = new Set(data.map(v => v['Carline'])).size;
       
@@ -168,15 +193,15 @@ function App() {
                 <tbody>
                   <tr>
                     <td>Average City MPG:</td>
-                    <td>{avgCityMPG.toFixed(1)}</td>
+                    <td>{localStats.avgCityMPG.toFixed(1)}</td>
                   </tr>
                   <tr>
                     <td>Average Highway MPG:</td>
-                    <td>{avgHighwayMPG.toFixed(1)}</td>
+                    <td>{localStats.avgHighwayMPG.toFixed(1)}</td>
                   </tr>
                   <tr>
                     <td>Average Combined MPG:</td>
-                    <td>{stats.averageMPG}</td>
+                    <td>{localStats.avgCombinedMPG.toFixed(1)}</td>
                   </tr>
                 </tbody>
               </table>
