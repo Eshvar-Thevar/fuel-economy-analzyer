@@ -1,10 +1,7 @@
 {
-  "name": "your-app-name",
+  "name": "fuel-economy-analyzer",
   "version": "0.1.0",
-  "homepage": "https://Eshvar-Thevar.github.io/fuel-economy-analyzer",
-  
-  "name": "fuel-economy-analzyer",
-  "version": "0.1.0",
+  "homepage": "https://eshvar-thevar.github.io/fuel-economy-analzyer",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
