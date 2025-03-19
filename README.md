@@ -1,5 +1,5 @@
 VEHICLE FUEL ECONOMY ANALYZER
-A web application that processes large vehicle datasets, visualizes trends with graphs, and performs data analysis
+- A web application that processes large vehicle datasets, visualizes trends with graphs, and performs data analysis
 
 FEATURES
 - Processes large datasets from major vehicle manufacturers
